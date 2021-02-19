@@ -1,0 +1,26 @@
+1.- al pulsar boto notificaciones sale pestaña al pasar 5s
+2.- al pulsar pestaña nos redirige a juegos.html (solucionar error pestaña)
+
+3.- rediriir a pagina covid.html al pulsar boton
+4.mostrar texto "cargando.." OK
+5.- Obtener ubicacion dispositivo OK
+6.- Listado municipios cercanos OK return del array
+
+
+
+Clase
+hacer un fetch a la URL de la generalitat
+dentro de result -> results -> resources ->obtener ultimo elemento de resources
+Dentro de este se encuentra name y URL la cual le realizaremos otro fetch
+
+
+
+obtener los ultimos 10 digitos del string(que son la fecha que nos interesa)
+realizar otro fetch de la url que nos mostrará
+
+utilizar metodo ; como separador y obtener las columnas que nos hace falta
+
+Columna 2,5,6 de la url
+
+
+prop.selected (para el de juegos)
