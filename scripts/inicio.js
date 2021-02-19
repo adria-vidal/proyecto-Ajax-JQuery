@@ -1,10 +1,11 @@
-'use strict';
+
 
 /** Codigo para la seccion Juegos */
 /** Evento para redirigir a la pagina Covid al pulsar boton */
 
 $(() => {
   $('button#covid').click(() => {
+    
     location.href = 'covid.html';
   });
 });

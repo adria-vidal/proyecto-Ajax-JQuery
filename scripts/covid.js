@@ -1,11 +1,16 @@
 import { imprimirTabla } from './imprimirDatos.js';
 
-
 /** Funcion para obtener la ubicacion y recoger
  * las ciudades a 20 KM de tu ubicacion
  */
-obtenerPueblosCercanos();
+
+
+$(() => {
+ obtenerPueblosCercanos();
+});
+
 async function obtenerPueblosCercanos() {
+  
   let ciudades = [];
 
   /** Obtenemos coordenadas (longitud, latitud) */
@@ -66,8 +71,11 @@ async function obtenerDatosCovid(ciudades) {
       }
     }
   }
-
+/** LLamamos a la funcion que imprime los datos
+ * que se encuentra en imprimir.js
+ */
   imprimirTabla(ciudadCovid, ultimaFecha);
 }
-
-
+export{
+  obtenerPueblosCercanos,
+}
