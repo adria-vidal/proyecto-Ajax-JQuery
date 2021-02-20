@@ -4,13 +4,11 @@ import { imprimirTabla } from './imprimirDatos.js';
  * las ciudades a 20 KM de tu ubicacion
  */
 
-
 $(() => {
- obtenerPueblosCercanos();
+  obtenerPueblosCercanos();
 });
 
 async function obtenerPueblosCercanos() {
-  
   let ciudades = [];
 
   /** Obtenemos coordenadas (longitud, latitud) */
@@ -19,7 +17,7 @@ async function obtenerPueblosCercanos() {
   const link = `https://api.geodatasource.com/cities?key=INICBYMJ11BP9AIAK2WFDILYCMGGEUV2&format=json&lat=${posicion.coords.latitude}&lng=${posicion.coords.longitude}`;
 
   /** A partir de las coordenadas obtenidas
-   *  obtendremos con el link de la api las ciudades a 20KM
+   *  obtendremos con el link de la api Geodatasource, las ciudades a 20KM
    */
 
   let cercanos = await fetch(link);
@@ -40,7 +38,8 @@ function obtenerCoordenadas() {
 }
 /**
  * Funcion para obtener los datos proporcionados
- *  por la generalitat del Covid-19
+ *  por la generalitat del Covid-19 y obtener array
+ * con los datos deseados a mostrar
  */
 async function obtenerDatosCovid(ciudades) {
   const link2 = `https://dadesobertes.gva.es/api/3/action/package_search?q=id:38e6d3ac-fd77-413e-be72-aed7fa6f13c2`;
@@ -71,11 +70,9 @@ async function obtenerDatosCovid(ciudades) {
       }
     }
   }
-/** LLamamos a la funcion que imprime los datos
- * que se encuentra en imprimir.js
- */
+  /** LLamamos a la funcion que imprime los datos
+   * que se encuentra en el archivo imprimirDatos.js
+   */
   imprimirTabla(ciudadCovid, ultimaFecha);
 }
-export{
-  obtenerPueblosCercanos,
-}
+export { obtenerPueblosCercanos };
