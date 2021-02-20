@@ -38,8 +38,7 @@ $(document).on('juegosCargados', function () {
   $('.form-select').change((event) => {
     /** Si pulsamos sobre filtrar por genero.. */
     if ($(event.target).val() == 1) {
-      
-      $(".form-select option:selected").text("Filtrar por...");
+      $('.form-select option[value=0]').prop('selected', true);
       $('.horizontal:first-child').attr('hidden', false);
       $('.form-select option[value=1]').attr('hidden', true);
       $('.form-check').children().remove();
@@ -48,7 +47,7 @@ $(document).on('juegosCargados', function () {
       for (let juego of listadoJuegos) setGeneros.add(juego.genero);
 
       for (let genero of setGeneros) {
-        let columna = $(
+        let col = $(
           "<div class='form-check-div'><input class='form-check-input' type='checkbox' value='" +
             genero +
             "'>" +
@@ -58,11 +57,11 @@ $(document).on('juegosCargados', function () {
             genero +
             '</label></div>'
         );
-        $('.form-check').append(columna);
+        $('.form-check').append(col);
       }
       /** Si filtramos por año.. */
     } else if ($(event.target).val() == 2) {
-      
+      $('.form-select option[value=0]').prop('selected', true);
       $('.horizontal:last-child').attr('hidden', false);
       $('.form-select option[value=2]').attr('hidden', true);
       $('.input-group-mb-3').attr('hidden', false);
