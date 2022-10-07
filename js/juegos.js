@@ -5,7 +5,7 @@ var listadoJuegos;
  * Función que se ejecuta cuando el DOM se ha cargado completamente
  */
 $(() => {
-  $.getJSON('../resources/juegos.json', function (data) {
+  $.getJSON('resources/juegos.json', function (data) {
     listadoJuegos = data;
     $(document).trigger('juegosCargados');
     $('.horizontal').attr('hidden', true);
